@@ -1,0 +1,433 @@
+/* Topbar Styles */
+.topbar {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  z-index: 1000;
+  background: linear-gradient(135deg, var(--nba-blue) 0%, var(--nba-blue-2) 100%); 
+  border-bottom: none;
+  box-shadow: 0 3px 8px var(--shadow-15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.topbar .left,
+.topbar .right {
+     display: flex; 
+     align-items: center; 
+     gap: 10px; 
+}
+
+.topbar .brand {
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none;
+  color: var(--white); 
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.topbar .brand img { height: 65px; width: auto; }
+
+.menu {
+  list-style: none;
+  display: flex;            
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--white); 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transition: color 0.2s, border-bottom 0.2s;
+  padding: 20px 15px;
+}
+
+.menu a:hover {
+  color: var(--pale-red);
+  border-bottom: 2px solid var(--light-red);
+}
+
+.hamburger { display: none; }
+
+.signin {
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--nba-red) 0%, var(--nba-red-2) 100%); 
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.signin:hover {
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--nba-red) 100%);
+  transform: translateY(-1px);
+}
+
+
+/* Standings Section Background */
+
+.section-header {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;      
+}
+.section-header :after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #c8102e 0%, #1d428a 100%);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+
+.table-container{
+  display:flex;
+  gap:120px;
+  justify-content:center;
+  
+}
+
+.conference {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px var(--shadow-15);
+}
+
+.conference h3 {
+  text-align: center;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--nba-blue) 0%, var(--nba-blue-2) 100%);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.nba-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+.nba-table thead {
+  background: linear-gradient(135deg, var(--nba-red) 0%, var(--nba-red-2) 100%);
+  color: var(--white);
+}
+
+.nba-table th {
+  padding: 12px 8px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.95em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nba-table th:first-child {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.nba-table td {
+  padding: 10px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--ice);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nba-table td:first-child {
+  text-align: left;
+  padding-left: 15px;
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.nba-table tbody tr:hover {
+  background-color: var(--ice);
+  transition: background-color 0.2s ease;
+}
+
+
+/* Game cards styling */
+.game-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+
+.game-time {
+  text-align: center;
+  color: #c8102e;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: .5px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f5f7fb;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.team:hover {
+  transform: translateX(4px);
+  background: #eef3ff;
+}
+
+.team img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.team span {
+  font-weight: 600;
+  color: #1d2a3b;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Carousel Controls - NBA Styled */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: -60px;
+}
+
+.carousel-control-next {
+  right: -60px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #1d428a;
+  border-radius: 50%;
+  background-size: 20px;
+  box-shadow: 0 4px 12px rgba(29, 66, 138, 0.3);
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #c8102e;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.4);
+}
+
+/* Carousel Indicators (dots) */
+.carousel-indicators {
+  margin-bottom: -40px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d0d7e5;
+  border: 2px solid #1d428a;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #1d428a;
+  width: 32px;
+  border-radius: 6px;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+  background-color: #2557b8;
+  transform: scale(1.2);
+}
+
+
+/* newsletter section */
+.subscribe{
+  padding: 60px 16px 80px;
+  font-family: var(--font-ui);
+}
+
+.subscribe-card{
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  text-align: center;
+}
+
+
+.subscribe-card h2{
+  font-family: var(--font-display-he);
+  color: var(--nba-blue);
+  margin: 0 0 6px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+.subscribe-card p{
+  margin: 0 0 25px;
+}
+
+.subscribe-form{
+  display: inline-flex;
+  align-items: stretch;
+
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(29,66,138,.18);
+  max-width: 520px;
+  width: 100%;
+}
+.subscribe-form input{
+  flex: 1;
+  min-width: 0;             
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-right: none;
+  outline: none;
+  font: inherit;
+}
+.subscribe-form button{
+  border: none;
+  padding: 0 18px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--nba-red) 0%, var(--nba-red-2) 100%);
+  cursor: pointer;
+}
+
+.subscribe-card .hint{
+  display: block;
+  margin-top: 10px;
+  color: #6b7280;
+}
+
+/* footer styles */
+.site-footer{
+  background: var(--nba-blue);                 
+  color: var(--white);
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding: 28px 16px;
+  
+}
+
+.footer-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+
+.legal-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legal-links li{
+  display: flex;
+  align-items: center;
+}
+
+.legal-links li + li::before{
+  content: "|";
+  opacity: .4;
+  margin: 0 8px;
+}
+
+.legal a{
+  color: #e8eef5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color .2s ease, opacity .2s ease;
+}
+
+.legal a:hover{
+  color: var(--pale-red);
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.social{
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ic{
+  width: 36px; height: 36px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--white);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.ic:hover{
+  background: var(--nba-red);
+  border-color: var(--nba-red);
+  transform: translateY(-2px);
+}
+
+.ic svg{ width: 18px; height: 18px; fill: currentColor; }

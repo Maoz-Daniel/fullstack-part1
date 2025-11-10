@@ -1,0 +1,41 @@
+:root{
+  /* Primary */
+  --nba-blue: #1d428a;
+  --nba-blue-2: #2557b8;
+
+  /* Reds */
+  --nba-red: #c8102e;
+  --nba-red-2: #e63950;
+  --crimson: #9a0d26;
+  --light-red: #ff6b7a;
+  --pale-red: #ffeaed;
+
+  /* Blues / neutrals */
+  --ice: #e8eef5;
+  --bg: #f5f7fa;
+  --white: #ffffff;
+  --text-strong: #111827;
+  --text: #374151;
+
+  /* misc */
+  --shadow-15: rgba(0,0,0,0.15);
+
+    --font-display-en: "Bebas Neue", system-ui, sans-serif;
+  --font-display-he: "Secular One", "Inter", system-ui, sans-serif;
+  --font-ui: "Inter", system-ui, -apple-system, sans-serif;
+  
+}
+
+
+body {
+  font-family: var(--font-ui);
+  background: linear-gradient(135deg, #f5f8ff 0%, #a3b8ff 30%, #1d428a 100%);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  position: relative;
+}
