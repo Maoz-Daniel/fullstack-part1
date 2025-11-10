@@ -19,15 +19,22 @@
 
   /* misc */
   --shadow-15: rgba(0,0,0,0.15);
+
+    --font-display-en: "Bebas Neue", system-ui, sans-serif;
+  --font-display-he: "Secular One", "Inter", system-ui, sans-serif;
+  --font-ui: "Inter", system-ui, -apple-system, sans-serif;
   
 }
 
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-ui);
   background: linear-gradient(135deg, #f5f8ff 0%, #a3b8ff 30%, #1d428a 100%);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
-
 
 /* Topbar Styles */
 .topbar {
@@ -108,11 +115,16 @@ body {
 
 
 .hero {
-  
+  background: linear-gradient(
+      rgba(29, 66, 138, 0.7), 
+      rgba(37, 87, 184, 0.7)
+    ),
+    url("assets/images/fansbg.png") center/cover no-repeat;
   color: var(--white);
-  padding: 60px 20px;
+  padding: 100px 20px 80px;
   text-align: center;
   border-top: 3px solid var(--light-red);
+  position: relative;
 }
 
 
@@ -392,10 +404,98 @@ body {
   transform: scale(1.2);
 }
 
-/* Container adjustments for arrow spacing */
+
 .container {
   position: relative;
 }
+
+/*top players section*/
+.top-players {
+  text-align: center;
+  padding: 60px 20px;
+}
+.player-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.player-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px var(--shadow-15);
+  width: 220px;
+  transition: transform .2s;
+}
+.player-card:hover { transform: translateY(-5px); }
+.player-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 180px;
+}
+.player-card h3 {
+  margin: 12px 0 4px;
+  font-family: var(--font-display-he);
+  color: var(--nba-blue);
+}
+.player-card p {
+  font-family: var(--font-ui);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+
+/*qucik-stats section*/
+.quick-stats {
+  background: linear-gradient(135deg, var(--nba-red-2) 0%, var(--nba-red) 100%);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: .3px;
+  border-radius: 12px;
+}
+
+/* newsletter section */
+.subscribe {
+  text-align: center;
+  padding: 60px 20px;
+    background: linear-gradient(135deg, #f5f8ff 0%, #a3b8ff 30%, #2557b8 100%);
+
+  
+}
+.subscribe form {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.subscribe input {
+  padding: 10px 14px;
+  border: 1px solid var(--ice);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+}
+.subscribe button {
+  background: linear-gradient(135deg, var(--nba-red) 0%, var(--nba-red-2) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s;
+}
+.subscribe button:hover {
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--nba-red) 100%);
+}
+
+
 
 
 /* footer styles */
