@@ -309,13 +309,14 @@
 }
 
 .subscribe-form{
-  display: inline-flex;
+  display: flex;
   align-items: stretch;
   border-radius: 999px;
   overflow: hidden;
   box-shadow: 0 8px 18px rgba(29,66,138,.18);
   max-width: 520px;
   width: 100%;
+  margin: 0 auto; /* center within subscribe-card */
 }
 .subscribe-form input{
   flex: 1;
@@ -325,6 +326,7 @@
   border-right: none;
   outline: none;
   font: inherit;
+  box-sizing: border-box;
 }
 .subscribe-form button{
   border: none;
@@ -333,6 +335,7 @@
   color: #fff;
   background: linear-gradient(135deg, var(--nba-red) 0%, var(--nba-red-2) 100%);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .subscribe-card .hint{
@@ -438,9 +441,9 @@
   .news-card, .player-card { width: 100%; }
 
   /* Subscribe form stacks */
-  .subscribe-form { flex-direction: column; box-shadow: none; }
-  .subscribe-form input { border-right: 1px solid #e5e7eb; }
-  .subscribe-form button { width: 100%; padding: 12px 16px; }
+  .subscribe-form { display: flex; flex-direction: column; gap: 8px; box-shadow: none; border-radius: 12px; overflow: visible; }
+  .subscribe-form input { width: 100%; border-right: 1px solid #e5e7eb; border-radius: 10px; }
+  .subscribe-form button { width: 100%; padding: 12px 16px; border-radius: 10px; }
 
   /* Quick stats single column */
   .quick-stats { flex-direction: column; align-items: center; }
@@ -455,6 +458,73 @@
   .news-grid { gap: 36px; }
   .player-grid { gap: 32px; }
   .highlights-grid { gap: 24px; max-width: 1200px; }
+}
+
+/* ===== Typography scale (rem/clamp) ===== */
+:root {
+  --fs-body: clamp(0.95rem, 1vw, 1.05rem);
+  --fs-h1: clamp(1.8rem, 4vw, 2.8rem);
+  --fs-h2: clamp(1.4rem, 2.4vw, 2rem);
+  --fs-h3: clamp(1.05rem, 1.6vw, 1.2rem);
+  --fs-nav: clamp(0.95rem, 1.2vw, 1.1rem);
+}
+
+body { font-size: var(--fs-body); }
+.hero h1 { font-size: var(--fs-h1); }
+.hero p { font-size: var(--fs-body); }
+.section-header { font-size: var(--fs-h2); }
+.section-subtitle { font-size: var(--fs-body); }
+.menu a { font-size: var(--fs-nav); }
+.game-time { font-size: var(--fs-h3); }
+.team span { font-size: var(--fs-body); }
+.player-card h3 { font-size: var(--fs-h3); }
+.player-card p { font-size: var(--fs-body); }
+.news-content h3 { font-size: var(--fs-h3); }
+.news-content p { font-size: var(--fs-body); }
+.subscribe-card h2 { font-size: var(--fs-h2); }
+.subscribe-card p, .hint { font-size: var(--fs-body); }
+
+/* ===== Device-specific breakpoints ===== */
+/* iPad mini (768 x 1024) — both orientations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero { padding: 80px 20px 60px; }
+  .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .table-container { gap: 28px; }
+  .quick-stats { gap: 14px; }
+  .menu { gap: 14px; }
+}
+
+/* iPhone SE (375 x 667) */
+@media (max-width: 380px) {
+  .hero { padding: 56px 12px 40px; }
+  .hero { min-height: 220px; }
+  .hero h1 { line-height: 1.1; margin: 0 0 6px; }
+  .hero p { margin: 6px 0 0; }
+  /* Topbar stacks neatly */
+  .topbar { flex-direction: column; align-items: center; height: auto; gap: 6px; padding: 8px 12px; }
+  .topbar .brand { font-size: 1.2rem; }
+  .topbar .brand img { height: 40px; }
+  .menu { width: 100%; justify-content: center; flex-wrap: wrap; gap: 6px; }
+  .menu a { padding: 8px 8px; }
+  .team img { width: 32px; height: 32px; }
+  .news-card, .player-card { width: 100%; }
+  .games-track { gap: 12px; }
+  .games-track .game-card { width: 250px; padding: 14px; }
+  .quick-stats { flex-direction: column; gap: 8px; }
+  /* Give tight sections breathing room on edges */
+  .news { padding: 28px 12px; }
+  .highlights { padding: 20px 12px; }
+  .Standings { padding: 12px; }
+  .subscribe { padding: 40px 12px 60px; }
+  .subscribe-card { margin: 0; }
+  .subscribe-form { width: 100%; gap: 8px; }
+  .highlight-card img { height: 140px; }
+  .news-grid { gap: 16px; }
+  /* Tables: compact and readable */
+  .conference { padding: 12px; }
+  .nba-table { font-size: 0.85rem; }
+  .nba-table th, .nba-table td { padding: 6px 8px; }
+  .nba-table th:first-child, .nba-table td:first-child { padding-left: 8px; }
 }
 /* === Theme: Light Pro NBA (keeps NBA palette) === */
 /* Light, clean canvas that lets content cards pop. */

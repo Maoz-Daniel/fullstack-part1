@@ -36,7 +36,11 @@ body {
   line-height: 1.6;
 }
 
-/* .container not used on this page; removed */
+/* Prevent horizontal overflow and ensure responsive media */
+*, *::before, *::after { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
+
+
 
 /* Shared: Topbar, Navigation, Auth button */
 .topbar {
@@ -134,7 +138,7 @@ body {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 24px;
   flex-wrap: wrap;
 }
@@ -149,6 +153,10 @@ p.legal-copy {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  /* Reset default list indentation so spacing is symmetrical */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .legal-links li{
@@ -200,3 +208,29 @@ p.legal-copy {
 }
 
 .ic svg{ width: 18px; height: 18px; fill: currentColor; }
+
+/* Small phones (e.g., iPhone SE 375x667): improve tap targets and spacing */
+@media (max-width: 380px) {
+  .topbar { flex-direction: column; align-items: stretch; height: auto; gap: 8px; padding: 8px 12px; }
+  .topbar .left { display: flex; justify-content: center; }
+  .topbar .brand { font-size: 1.2rem; }
+  .topbar .brand img { height: 40px; }
+  .menu { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 12px; }
+  .menu a { padding: 10px 12px; border-radius: 8px; }
+  .right { width: 100%; display: flex; justify-content: center; margin-top: 4px; }
+  .signin { padding: 10px 16px; }
+
+  /* Footer spacing and readability */
+  .site-footer { padding: 20px 12px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .legal a { font-size: 0.95rem; }
+  .social { gap: 14px; }
+  .ic { width: 40px; height: 40px; }
+}
+
+/* Small phones: stack footer content and tighten padding */
+@media (max-width: 380px) {
+  .site-footer { padding: 20px 12px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .social { justify-content: flex-start; }
+}
