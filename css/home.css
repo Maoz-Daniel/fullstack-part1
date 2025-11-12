@@ -142,6 +142,17 @@
   font-size: 2.5em;
 }
 
+/* Underline accent for section headings */
+.section-header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--nba-red) 0%, var(--nba-blue) 100%);
+}
+
 
 .section-subtitle {
   text-align: center;
@@ -400,7 +411,7 @@
 
 /* ========== Responsive tweaks ========== */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .highlights-grid { grid-template-columns: 1fr; }
 }
 
@@ -410,7 +421,7 @@
   .conference { padding: 1.5rem; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* Top hero spacing */
   .hero { padding: 4.375rem 1rem 3.125rem; }
 
@@ -445,7 +456,8 @@
   .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .table-container { gap: 28px; }
   .quick-stats { gap: 14px; }
-  .menu { gap: 14px; }
+  /* Ensure topbar menu stays on one line on iPad */
+  .menu { flex-wrap: nowrap; }
 }
 
 /* iPhone SE (375 x 667) */

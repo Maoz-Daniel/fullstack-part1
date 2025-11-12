@@ -211,15 +211,16 @@ p.legal-copy {
 
 /* iPad mini (768 x 1024): tighten topbar so nav fits one row */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .topbar { padding: 0 12px; }
-  .topbar .brand img { height: 48px; }
-  .topbar .brand { font-size: 1.25rem; }
-  .menu { gap: 10px; }
-  .menu a { padding: 12px 10px; font-size: 1rem; }
-  .signin { padding: 6px 12px; }
+  .topbar { padding: 0 10px; gap: 8px; }
+  .topbar .brand img { height: 44px; }
+  .topbar .brand { font-size: 1.15rem; }
+  .menu { gap: 8px; flex-wrap: nowrap; }
+  .menu a { padding: 8px 8px; font-size: 0.95rem;  }
+  .right { margin-left: auto; }
+  .signin { padding: 6px 10px; white-space: nowrap; }
 }
 
-/* Small phones (e.g., iPhone SE 375x667): improve tap targets and spacing */
+/* Small phones (e.g., iPhone SE 375x667)*/
 @media (max-width: 380px) {
   .topbar { flex-direction: column; align-items: stretch; height: auto; gap: 0.5rem; padding: 0.5rem 0.75rem; }
   .topbar .left { display: flex; justify-content: center; }
@@ -238,9 +239,3 @@ p.legal-copy {
   .ic { width: 2.5rem; height: 2.5rem; }
 }
 
-/* Small phones: stack footer content and tighten padding */
-@media (max-width: 380px) {
-  .site-footer { padding: 1.25rem 0.75rem; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-  .social { justify-content: flex-start; }
-}
