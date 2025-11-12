@@ -139,6 +139,12 @@ body {
   flex-wrap: wrap;
 }
 
+p.legal-copy {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
 .legal-links{
   display: flex;
   flex-wrap: wrap;
