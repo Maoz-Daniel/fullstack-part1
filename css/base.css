@@ -46,7 +46,7 @@ img { max-width: 100%; height: auto; }
 .topbar {
   position: sticky;
   top: 0;
-  height: 80px;
+  height: 5rem;
   z-index: 1000;
   background: linear-gradient(135deg, var(--nba-blue) 0%, var(--nba-blue-2) 100%);
   border-bottom: none;
@@ -54,30 +54,30 @@ img { max-width: 100%; height: auto; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 0 16px;
+  gap: 0.75rem;
+  padding: 0 1rem;
 }
 
 .topbar .left,
 .topbar .right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .topbar .brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   text-decoration: none;
   color: var(--white);
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 }
 
 .topbar .brand img {
-  height: 65px;
+  height: 4rem;
   width: auto;
 }
 
@@ -85,7 +85,7 @@ img { max-width: 100%; height: auto; }
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 1.125rem;
   margin: 0;
   padding: 0;
 }
@@ -97,7 +97,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 800;
   font-size: 1.1rem;
   transition: color 0.2s, border-bottom 0.2s;
-  padding: 20px 15px;
+  padding: 1.25rem 0.9375rem;
 }
 
 .menu a:hover {
@@ -115,8 +115,8 @@ img { max-width: 100%; height: auto; }
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -130,29 +130,29 @@ img { max-width: 100%; height: auto; }
   background: var(--nba-blue);
   color: var(--white);
   border-top: 1px solid rgba(255,255,255,.15);
-  padding: 28px 16px;
+  padding: 1.75rem 1rem;
 }
 
 .footer-inner{
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 p.legal-copy {
   align-items: center;
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .legal-links{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.625rem;
   /* Reset default list indentation so spacing is symmetrical */
   list-style: none;
   margin: 0;
@@ -167,7 +167,7 @@ p.legal-copy {
 .legal-links li + li::before{
   content: "|";
   opacity: .4;
-  margin: 0 8px;
+  margin: 0 0.5rem;
 }
 
 .legal a{
@@ -185,14 +185,14 @@ p.legal-copy {
 
 .social{
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .ic{
-  width: 36px; height: 36px;
+  width: 2.25rem; height: 2.25rem;
   display: inline-flex;
   align-items: center; justify-content: center;
   border-radius: 50%;
@@ -207,30 +207,40 @@ p.legal-copy {
   transform: translateY(-2px);
 }
 
-.ic svg{ width: 18px; height: 18px; fill: currentColor; }
+.ic svg{ width: 1.125rem; height: 1.125rem; fill: currentColor; }
+
+/* iPad mini (768 x 1024): tighten topbar so nav fits one row */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .topbar { padding: 0 12px; }
+  .topbar .brand img { height: 48px; }
+  .topbar .brand { font-size: 1.25rem; }
+  .menu { gap: 10px; }
+  .menu a { padding: 12px 10px; font-size: 1rem; }
+  .signin { padding: 6px 12px; }
+}
 
 /* Small phones (e.g., iPhone SE 375x667): improve tap targets and spacing */
 @media (max-width: 380px) {
-  .topbar { flex-direction: column; align-items: stretch; height: auto; gap: 8px; padding: 8px 12px; }
+  .topbar { flex-direction: column; align-items: stretch; height: auto; gap: 0.5rem; padding: 0.5rem 0.75rem; }
   .topbar .left { display: flex; justify-content: center; }
   .topbar .brand { font-size: 1.2rem; }
-  .topbar .brand img { height: 40px; }
-  .menu { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 12px; }
-  .menu a { padding: 10px 12px; border-radius: 8px; }
-  .right { width: 100%; display: flex; justify-content: center; margin-top: 4px; }
-  .signin { padding: 10px 16px; }
+  .topbar .brand img { height: 2.5rem; }
+  .menu { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.75rem; }
+  .menu a { padding: 0.625rem 0.75rem; border-radius: 0.5rem; }
+  .right { width: 100%; display: flex; justify-content: center; margin-top: 0.25rem; }
+  .signin { padding: 0.625rem 1rem; }
 
   /* Footer spacing and readability */
-  .site-footer { padding: 20px 12px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .site-footer { padding: 1.25rem 0.75rem; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .legal a { font-size: 0.95rem; }
-  .social { gap: 14px; }
-  .ic { width: 40px; height: 40px; }
+  .social { gap: 0.875rem; }
+  .ic { width: 2.5rem; height: 2.5rem; }
 }
 
 /* Small phones: stack footer content and tighten padding */
 @media (max-width: 380px) {
-  .site-footer { padding: 20px 12px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .site-footer { padding: 1.25rem 0.75rem; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .social { justify-content: flex-start; }
 }

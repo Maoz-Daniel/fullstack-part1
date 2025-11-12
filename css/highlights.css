@@ -55,12 +55,16 @@ body {
 .embed-16x9.sm { padding-top: 56.25%; }
 
 
-@media (max-width: 992px) {
-  .hl-grid { grid-template-columns: 1fr; }
+/* iPad mini (768 x 1024) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hl-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hl-page { padding: 32px 16px 48px; }
 }
 
-@media (max-width: 480px) {
+/* iPhone SE (375 x 667) */
+@media (max-width: 380px) {
+  .hl-grid { grid-template-columns: 1fr; gap: 12px; }
+  .hl-page { padding: 24px 12px 36px; }
   .section-header { font-size: 1.6rem; }
   .section-subtitle { font-size: 0.95rem; }
 }
-

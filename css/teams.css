@@ -25,11 +25,22 @@ body {
 }
 .btn.learn-more:hover { background: rgba(255,255,255,.18); }
 
-@media (max-width: 768px) {
+/* iPad mini (768 x 1024) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .team-banner { flex-direction: column; text-align: center; align-items: center; }
   .team-logo { width: 64px; height: 64px; }
-  .team-name { font-size: 1.6rem; }
+  .team-name { font-size: 1.8rem; }
   .btn.learn-more { width: 100%; text-align: center; }
+}
+
+/* iPhone SE (375 x 667) */
+@media (max-width: 380px) {
+  .teams-page { padding: 28px 12px 40px; }
+  .team-banner { flex-direction: column; text-align: center; align-items: center; padding: 18px 14px; gap: 12px; }
+  .team-logo { width: 56px; height: 56px; }
+  .team-name { font-size: 1.5rem; }
+  .btn.learn-more { width: 100%; text-align: center; padding: 10px 12px; }
+  .teams-map { padding: 20px 12px 28px; }
 }
 
 /* Section headings consistent with site */
