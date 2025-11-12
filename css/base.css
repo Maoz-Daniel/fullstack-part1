@@ -29,16 +29,14 @@
 
 body {
   font-family: var(--font-ui);
-  background: linear-gradient(135deg, #f5f8ff 0%, #a3b8ff 30%, #1d428a 100%);
+  background: linear-gradient(135deg, #eae5e5 0%, #f5f7fa 40%, #e8eef5 100%);
   color: var(--text);
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
-.container {
-  position: relative;
-}
+/* .container not used on this page; removed */
 
 /* Shared: Topbar, Navigation, Auth button */
 .topbar {
@@ -196,4 +194,3 @@ body {
 }
 
 .ic svg{ width: 18px; height: 18px; fill: currentColor; }
-

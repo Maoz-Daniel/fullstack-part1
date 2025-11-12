@@ -136,25 +136,20 @@
 /* Standings Section Background */
 .section-header {
   text-align: center;
-  color: #ffffff;
-  font-family: 'Oswald', sans-serif;      
+  color: var(--nba-blue);
+  font-family: 'Oswald', sans-serif;  
+  font-weight: 550;   
+  font-size: 2.5em;
 }
-.section-header :after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin: 10px auto 0;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #c8102e 0%, #1d428a 100%);
-}
+
 
 .section-subtitle {
   text-align: center;
-  color: var(--white);
+  color: var(--text);
   font-family: 'Inter', sans-serif;
-  font-size: 1em;
+  font-size: 1.1em;
   margin-bottom: 30px;
+  opacity: 0.85;
 }
 
 /* Game cards styling */
@@ -214,71 +209,24 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Carousel Controls - NBA Styled */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
-  height: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: auto;
-  opacity: 1;
-}
 
-.carousel-control-prev {
-  left: -60px;
-}
 
-.carousel-control-next {
-  right: -60px;
-}
+/* .container was unused on this page; removed */
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 50px;
-  height: 50px;
-  background-color: #1d428a;
-  border-radius: 50%;
-  background-size: 20px;
-  box-shadow: 0 4px 12px rgba(29, 66, 138, 0.3);
-  transition: all 0.3s ease;
+/* Games ticker (CSS-only loop) */
+.games-ticker { padding: 24px 16px; }
+.games-viewport { overflow: hidden; }
+.games-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: move-loop 40s linear infinite;
 }
+.games-track .game-card { flex: 0 0 auto; width: 300px; }
 
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  background-color: #c8102e;
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.4);
-}
-
-/* Carousel Indicators (dots) */
-.carousel-indicators {
-  margin-bottom: -40px;
-}
-
-.carousel-indicators [data-bs-target] {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #d0d7e5;
-  border: 2px solid #1d428a;
-  opacity: 1;
-  transition: all 0.3s ease;
-}
-
-.carousel-indicators .active {
-  background-color: #1d428a;
-  width: 32px;
-  border-radius: 6px;
-}
-
-.carousel-indicators [data-bs-target]:hover {
-  background-color: #2557b8;
-  transform: scale(1.2);
-}
-
-.container {
-  position: relative;
+@keyframes move-loop {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /*top players section*/
@@ -336,6 +284,7 @@
 .subscribe{
   padding: 60px 16px 80px;
   font-family: var(--font-ui);
+  margin-top: 50px;
 }
 
 .subscribe-card{
@@ -359,7 +308,6 @@
   margin: 0 0 25px;
 }
 
-/* אינפוט + כפתור מחוברים — בלי מדיה קווריז */
 .subscribe-form{
   display: inline-flex;
   align-items: stretch;
@@ -391,4 +339,125 @@
   display: block;
   margin-top: 10px;
   color: #6b7280;
+}
+
+.team-strip { padding: 40px 16px; }
+.team-chips {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+}
+.team-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--text-strong);
+  border: 1px solid #e6eaf2; border-radius: 999px;
+  padding: 8px 12px; text-decoration: none;
+  box-shadow: 0 4px 10px rgba(17,24,39,0.06);
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.team-chip img { width: 22px; height: 22px; object-fit: contain; }
+.team-chip:hover { transform: translateY(-2px); border-color: var(--nba-blue); box-shadow: 0 8px 18px rgba(29,66,138,0.12); }
+
+/* Highlights grid */
+.highlights { padding: 24px 16px; }
+.highlights-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px; max-width: 1024px; margin: 0 auto;
+}
+.highlight-card {
+  position: relative; display: block; overflow: hidden; border-radius: 12px;
+  background: #fff; border: 1px solid #e6eaf2; text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.highlight-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.hl-title {
+  display: block; padding: 10px 12px; color: var(--text-strong); font-weight: 600;
+  border-top: 1px solid #eef1f6;
+}
+.highlight-card:hover { box-shadow: 0 10px 24px rgba(0,0,0,.14); transform: translateY(-2px); }
+
+/* ========== Responsive tweaks ========== */
+
+@media (max-width: 768px) {
+  .highlights-grid { grid-template-columns: 1fr; }
+}
+
+
+@media (max-width: 1024px) {
+  .table-container { gap: 40px; }
+  .conference { padding: 24px; }
+}
+
+@media (max-width: 768px) {
+  /* Top hero spacing */
+  .hero { padding: 70px 16px 50px; }
+
+  /* Nav menu wraps instead of overflowing */
+  .menu { flex-wrap: wrap; gap: 10px; }
+  .menu a { padding: 12px 10px; font-size: 1rem; }
+
+  /* Standings: stack conferences and allow horizontal scroll of tables */
+  .table-container { flex-direction: column; gap: 20px; }
+  .conference { width: 100%; overflow-x: auto; }
+  .conference .nba-table { min-width: 560px; }
+
+  /* Quick stats wrap and center */
+  .quick-stats { flex-wrap: wrap; gap: 10px; text-align: center; }
+
+  /* Team item sizing */
+  .team { gap: 10px; }
+  .team img { width: 36px; height: 36px; }
+
+  /* Typography scale */
+  .section-header { font-size: 1.8rem; }
+  .section-subtitle { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  /* Cards full width */
+  .news-card, .player-card { width: 100%; }
+
+  /* Subscribe form stacks */
+  .subscribe-form { flex-direction: column; box-shadow: none; }
+  .subscribe-form input { border-right: 1px solid #e5e7eb; }
+  .subscribe-form button { width: 100%; padding: 12px 16px; }
+
+  /* Quick stats single column */
+  .quick-stats { flex-direction: column; align-items: center; }
+
+  /* Compact topbar */
+  .topbar { height: 64px; }
+  .topbar .brand img { height: 48px; }
+}
+
+/* Larger screens: add breathing room between cards */
+@media (min-width: 1200px) {
+  .news-grid { gap: 36px; }
+  .player-grid { gap: 32px; }
+  .highlights-grid { gap: 24px; max-width: 1200px; }
+}
+/* === Theme: Light Pro NBA (keeps NBA palette) === */
+/* Light, clean canvas that lets content cards pop. */
+body {
+  /* Subtle professional gray canvas to contrast white cards */
+  background: linear-gradient(180deg, #f2f3f6 0%, #eceff3 55%, #e6e9ee 100%);
+  background-color: #eceff3; /* fallback */
+}
+
+/* Section headings on light canvas: use NBA blue, crisp and professional */
+.section-header {
+  color: var(--nba-blue);
+  font-family: var(--font-display-he);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Accent underline in NBA gradient (red → blue) */
+.section-header::after {
+  background: linear-gradient(90deg, var(--nba-red) 0%, var(--nba-blue) 100%);
+}
+
+/* Section subtitle: neutral readable gray on light */
+.section-subtitle {
+  color: var(--text);
+  font-family: var(--font-ui);
+  opacity: 0.9;
 }
