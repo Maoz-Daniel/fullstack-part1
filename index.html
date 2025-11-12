@@ -583,12 +583,19 @@
           </div>
         </section>
 
+
         <section class="subscribe">
           <div class="subscribe-card">
             <h2>Join the HoopVerse</h2>
             <p>Get weekly NBA updates straight to your inbox.</p>
 
-    <form class="subscribe-form" action="#" method="post">
+            <!-- CSS-only submission banner target at top -->
+        <div id="subscribed" class="flash-banner">
+          <span>Your email has been sent</span>
+          <a class="close" href="#" aria-label="Dismiss">×</a>
+        </div>
+            
+    <form class="subscribe-form" action="#subscribed" method="get">
       <input type="email" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>

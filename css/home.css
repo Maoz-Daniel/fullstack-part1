@@ -302,8 +302,8 @@
   color: var(--nba-blue);
   margin: 0 0 6px;
   font-size: 32px;
-  line-height: 1.2;
-}
+  }
+  
 .subscribe-card p{
   margin: 0 0 25px;
 }
@@ -340,6 +340,28 @@
   margin-top: 10px;
   color: #6b7280;
 }
+
+/* CSS-only flash banner shown via :target */
+.flash-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  transform: translateY(-100%);
+  transition: transform .35s ease;
+  background: linear-gradient(135deg, var(--nba-red) 0%, var(--nba-red-2) 100%);
+  color: #fff;
+  padding: 10px 16px;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+  z-index: 2000;
+}
+
+#subscribed:target.flash-banner { transform: translateY(0); }
+.flash-banner .close { color: #fff; text-decoration: none; margin-left: 12px; opacity: .85; }
+.flash-banner .close:hover { opacity: 1; }
+
+/* Team strip */
 
 .team-strip { padding: 40px 16px; }
 .team-chips {
