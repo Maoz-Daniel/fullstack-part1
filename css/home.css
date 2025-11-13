@@ -60,6 +60,7 @@
 .nba-table th:first-child {
   text-align: left;
   padding-left: 0.9375rem;
+  white-space: nowrap;
 }
 
 .nba-table td {
@@ -75,6 +76,7 @@
   padding-left: 0.9375rem;
   color: var(--text-strong);
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .nba-table tbody tr:hover {
@@ -453,8 +455,9 @@
 /* iPad mini (768 x 1024) — both orientations */
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero { padding: 80px 20px 60px; }
-  .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  .table-container { gap: 28px; }
+  .highlights-grid { grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .table-container { flex-direction: column; gap: 20px;}
+  .conference { width: 80%; margin: auto; }
   .quick-stats { gap: 14px; }
   /* Ensure topbar menu stays on one line on iPad */
   .menu { flex-wrap: nowrap; }
