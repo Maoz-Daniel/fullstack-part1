@@ -3,7 +3,7 @@
       rgba(29, 66, 138, 0.7), 
       rgba(37, 87, 184, 0.7)
     ),
-    url("../assets/images/fansbg.png") center/cover no-repeat;
+    url("../assets/images/home/fansbg.png") center/cover no-repeat;
   color: var(--white);
   padding: 6.25rem 1.25rem 5rem;
   text-align: center;
