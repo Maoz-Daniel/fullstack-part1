@@ -1,15 +1,16 @@
 
 
-/* Page background to match home subtle gray */
+/* Page background to match home subtle gray 
 body {
   background: linear-gradient(180deg, #f2f3f6 0%, #eceff3 55%, #e6e9ee 100%);
   background-color: #eceff3;
-}
+} 
+  */
 
 
 .hl-page { padding: 40px 16px 60px; }
 
-/* Section headings consistent with home */
+/* section headings consistent with home */
 .section-header {
   text-align: center;
   color: var(--nba-blue);
@@ -34,9 +35,6 @@ body {
   margin: 0 auto 24px;
   opacity: 0.9;
 }
-
-
-
 
 .hl-grid {
   max-width: 1200px; margin: 0 auto; padding: 12px 0;
@@ -80,16 +78,28 @@ body {
 .embed-16x9.sm { padding-top: 56.25%; border-radius: 10px; }
 
 
-/* iPad mini (768 x 1024) */
+/* ipad anachi + ofki */
 @media (min-width: 768px) and (max-width: 1024px) {
   .hl-grid { grid-template-columns: 1fr; gap: 16px; }
   .hl-page { padding: 32px 16px 48px; }
 }
 
-/* iPhone SE (375 x 667) */
+/* base design to phones */
+@media (max-width: 767px) {
+  /* there is no specific setting, inheriting from base.css */
+}
+
+/* anachi phones, adding on base phone styles */
 @media (max-width: 380px) {
   .hl-grid { grid-template-columns: 1fr; gap: 12px; }
   .hl-page { padding: 24px 12px 36px; }
+  
+  /* override section header and subtitle for smaller screens */
   .section-header { font-size: 1.6rem; }
   .section-subtitle { font-size: 0.95rem; }
+}
+
+/* for landscape phones and not portrait phones */
+@media ( (min-width: 376px) and (max-width: 667px )) {
+  /* there is no specific setting, inheriting from base.css */
 }

@@ -220,7 +220,16 @@ p.legal-copy {
   .signin { padding: 6px 10px; white-space: nowrap; }
 }
 
-/* Small phones (e.g., iPhone SE 375x667)*/
+/* base design to phones */
+@media (max-width: 767px) {
+  .menu { flex-wrap: wrap; gap: 0.625rem;}
+  .menu a { padding: 0.75rem 0.625rem; font-size: 1rem; }
+
+  .section-header { font-size: 1.8rem; }
+  .section-subtitle { font-size: 1rem; }
+}
+
+/* anachi phones, adding on base phone styles */
 @media (max-width: 380px) {
   .topbar { flex-direction: column; align-items: stretch; height: auto; gap: 0.5rem; padding: 0.5rem 0.75rem; }
   .topbar .left { display: flex; justify-content: center; }
@@ -231,11 +240,26 @@ p.legal-copy {
   .right { width: 100%; display: flex; justify-content: center; margin-top: 0.25rem; }
   .signin { padding: 0.625rem 1rem; }
 
-  /* Footer spacing and readability */
   .site-footer { padding: 1.25rem 0.75rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .legal a { font-size: 0.95rem; }
   .social { gap: 0.875rem; }
   .ic { width: 2.5rem; height: 2.5rem; }
+
+  .subscribe { padding: 2.5rem 0.75rem 3.75rem; }
+  .subscribe-card { margin: 0; }
+  .subscribe-form { display: flex; flex-direction: column; width: 100%; gap: 8px; box-shadow: none; border-radius: 12px; overflow: visible; }
+  .subscribe-form input { width: 100%; border-right: 1px solid #e5e7eb; border-radius: 10px; }
+  .subscribe-form button { width: 100%; padding: 12px 16px; border-radius: 10px; }
 }
 
+/* for landscape phones and not portrait phones */
+@media ( (min-width: 376px) and (max-width: 667px )) {
+  .menu {
+    padding-left: 3rem ; 
+  }
+  .signin {
+    white-space: nowrap; /* prevent wrapping of "Sign In" text */
+  }
+  
+}

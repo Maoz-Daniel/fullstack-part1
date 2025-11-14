@@ -30,11 +30,10 @@
 
 .teams-page {
   display: flex;
-  min-height: calc(100vh - 180px); /* מותאם כך שהפוטר לא יכסה */
+  min-height: calc(100vh - 180px);
   background: var(--background, #f7f7f7);
 }
 
-/* צד שמאל - וידאו */
 .left-side {
   flex: 1;
   position: relative;
@@ -51,7 +50,6 @@
   opacity: 1;
 }
 
-/* צד ימין - רשימת קבוצות */
 .right-side {
   flex: 1;
   display: flex;
@@ -103,17 +101,36 @@
   font-weight: 600;
 }
 
-/* רספונסיביות */
-@media (max-width: 900px) {
+/* ipad anachi +ofki */
+@media (min-width: 768px) and (max-width: 1024px) {
+
   .teams-page {
     flex-direction: column;
   }
-
   .left-side {
     height: 250px;
   }
-
   .right-side {
     padding: 2rem 1rem;
   }
 }
+
+/* base design to phones */
+@media (max-width: 767px) {
+
+  .teams-page {
+    flex-direction: column;
+  }
+  .left-side {
+    height: 250px;
+  }
+  .right-side {
+    padding: 2rem 1rem;
+  }
+}
+
+/* anachi phones, adding on base phone styles */
+
+
+/* for landscape phones and not portrait phones */
+
