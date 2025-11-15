@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,28 +12,24 @@
 <body>
 
   <header class="site-header">
-    <nav class="topbar" aria-label="Main Navigation">
+    <nav class="topbar">
       <div class="left">
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
         <a class="brand" href="index.html">
-          <img src="assets\images\logo.png" alt="HoopVerse logo" onerror="this.remove()">
+          <img src="assets\images\logo.png" alt="HoopVerse logo">
           <span>HoopVerse</span>
         </a>
       </div>
 
       <ul class="menu">
-        <li><a href="games.html">Games</a></li>
-        <li><a href="highlights.html">Highlights</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="stats.html">Stats</a></li>
-        <li><a href="teams.html">Teams</a></li>
-        <li><a href="players.html">Players</a></li>
-      </ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="rules.html">NBA Rules</a></li>
+    </ul>
 
       <div class="right">
-        <a class="signin" href="signin.html">Sign In</a>
+        <a class="signin" href="#">Sign In</a>
       </div>
     </nav>
   </header>
@@ -47,7 +43,7 @@
         <!-- Main: Top 10 Plays video -->
         <div class="hl-main">
           <div class="embed-16x9">
-            <video src="assets\videos\higlhtights\NBA's Top 10 Plays Of The Night _ November 11, 2025.mp4"
+            <video src="assets\videos\higlhtights\top10.mp4"
              controls
             preload="metadata"
             playsinline
@@ -55,7 +51,7 @@
               Sorry, your browser doesn't support embedded videos.
             </video>
           </div>
-          <h2 class="hl-title">Top 10 Plays — Last Night</h2>
+          <h2 class="hl-title">Top 10 Plays - Last Night</h2>
 
  <ol class="top10-plays" reversed>
     <li><strong>Thunderous putback dunk</strong> - Giannis rises over two defenders vs. Celtics.</li>
@@ -71,10 +67,10 @@
   </ol>        </div>
 
         <!-- Side: Game highlights list -->
-        <aside class="hl-side" aria-label="Game highlights">
+        <aside class="hl-side">
           <article class="hl-card">
             <div class="embed-16x9 sm">
-              <video src="assets\videos\higlhtights\Deni Avdija's 2nd Career TRIPLE-DOUBLE In Atlanta _ April 1, 2025.mp4"
+              <video src="assets\videos\higlhtights\deni.mp4"
                controls
                preload="metadata"
                playsinline
@@ -87,7 +83,7 @@
 
           <article class="hl-card">
             <div class="embed-16x9 sm">
-              <video src="assets\videos\higlhtights\Full Game Recap_ Warriors vs Lakers _ Klay Hits 10 Straight 3-Pointers.mp4"
+              <video src="assets\videos\higlhtights\lakers_warriors.mp4"
                controls
                 preload="metadata"
                  playsinline
@@ -100,7 +96,7 @@
 
           <article class="hl-card">
             <div class="embed-16x9 sm">
-              <video src="assets\videos\higlhtights\Full Game Recap_ Nuggets vs Suns _ Murray Drops 46.mp4"
+              <video src="assets\videos\higlhtights\nuggets_suns.mp4"
                controls
                 preload="metadata"
                  playsinline
@@ -118,8 +114,8 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="legal">
-        <p class="legal-copy">© 2025 HoopVerse. All rights reserved.</p>
-        <ul class="legal-links" aria-label="Policies">
+      <p class="legal-copy">© 2025 HoopVerse. All rights reserved.</p>
+        <ul class="legal-links">
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">EEA/UK Privacy Statement</a></li>
           <li><a href="#">Terms of Use</a></li>
@@ -143,3 +139,4 @@
 
 </body>
 </html>
+

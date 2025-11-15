@@ -1,0 +1,269 @@
+main {
+  padding: 0 1.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 1.75rem;
+}
+
+.section-heading h2 {
+  font-size: 2.5rem;
+  color: var(--nba-blue);
+  margin: 0 0 0.3rem;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.rules-intro {
+  background: var(--white);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(31, 41, 55, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 3rem auto;
+}
+
+.rules-intro .intro-text {
+  flex: 2;
+  min-width: 240px;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.rules-intro h1 {
+  font-size: 3rem;
+  margin: 0 0 0.75rem;
+  color: var(--nba-blue);
+}
+
+.rules-intro .intro-text p {
+  margin: 0 0 1rem;
+}
+
+
+.intro-highlights {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.intro-highlights li {
+  background: var(--ice);
+  border-radius: 0.85rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.intro-highlights .label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--nba-blue-2);
+}
+
+.rulebook-access {
+  margin-bottom: 4rem;
+}
+
+.rulebook-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.rulebook-sidebar {
+  background: var(--white);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rulebook-sidebar h3 {
+  margin-top: 0;
+  color: var(--nba-blue-2);
+  font-size: 1.3rem;
+}
+
+.rulebook-sidebar h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  color: var(--nba-blue);
+}
+
+.rulebook-sidebar p {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.rulebook-sidebar ul {
+  list-style: none /* remove bullets */;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-links ul li a {
+  text-decoration: none;
+  color: var(--nba-blue);
+  font-weight: 600;
+}
+
+
+
+.rulebook-embed {
+  background: var(--white);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 25px 65px rgba(15, 23, 42, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rulebook-embed embed {
+  width: 100%;
+  height: 720px;
+  border: none;
+  border-radius: 1rem;
+  background: #0f172a;
+}
+
+.embed-fallback {
+  color: var(--text);
+}
+
+.embed-fallback a {
+  color: var(--nba-red);
+  font-weight: 600;
+}
+
+.ref-signals {
+  margin-bottom: 4rem;
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.signal-card {
+  background: var(--white);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.signal-card img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.signal-card h3 {
+  margin: 0 /* remove default margin */;
+  color: var(--text-strong);
+}
+
+.signal-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.rules-faq {
+  margin-bottom: 4rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-list details {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.1);
+}
+
+.faq-list summary {
+  cursor: pointer /* indicate clickable */;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.faq-list p {
+  margin: 0.75rem 0 0;
+  color: var(--text);
+}
+
+
+
+/* iPad mini (768 x 1024): align layout stack with other sections */
+@media (min-width: 768px) and (max-width: 1024px) {
+  main { padding: 0 1rem 3rem; }
+  .rules-intro { flex-direction: column; }
+  .intro-highlights { flex-direction: row; gap: 1rem; }
+  .intro-highlights li { flex: 1 1 45%; }
+  .rulebook-layout { grid-template-columns: 1fr; }
+  .rulebook-embed embed { height: 520px; }
+  .signals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* base design to phones */
+@media (max-width: 767px) {
+  main { padding: 0 1rem 3rem; }
+  .rules-intro {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+  .rules-intro .intro-text { font-size: 1rem; }
+  .rules-intro h1 { font-size: 2.25rem; }
+  .intro-highlights {
+    width: 100%;
+    flex-direction: row /* row for wrapping */;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .intro-highlights li {
+    flex: 1; /* make items equal width */
+    padding: 1rem;
+  }
+  .rulebook-layout { grid-template-columns: 1fr; }
+  .rulebook-embed embed { height: 420px; }
+  .signals-grid { grid-template-columns: 1fr}
+}
+
+/* anachi phones, adding on base phone styles */
+@media (max-width: 380px) {
+  .rules-intro { padding: 1.25rem; }
+  .rules-intro h1 { font-size: 2rem; }
+  .intro-highlights li {
+    flex: 1 1 120px;
+    padding: 0.85rem;
+  }
+  .rulebook-embed embed { height: 360px; }
+  .faq-list details { padding: 0.85rem 1rem; }
+}
